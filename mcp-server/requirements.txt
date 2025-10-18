@@ -26,3 +26,4 @@ flask>=2.3.0
 
 # 其他实用库
 pydantic>=2.0.0
+librosa
