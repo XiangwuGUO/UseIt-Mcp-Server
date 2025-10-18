@@ -1,0 +1,41 @@
+# MCP Servers Configuration with FRP Tunnel Support
+# Configure custom servers to be launched alongside official ones
+
+custom_servers:
+  # # Example custom server with FRP tunnel support
+  # - name: example_server
+  #   module_path: customized_server/example_server.py
+  #   port: 8005
+  #   transport: streamable-http
+  #   description: "Example custom MCP server with echo functionality"
+  #   # FRP隧道配置
+  #   enable_tunnel: true          # 启用FRP隧道
+  #   tunnel_subdomain: "example"  # 自定义子域名（可选）
+  #   auto_register: true          # 自动注册到MCP客户端
+  
+  # Template for additional custom servers:
+  # - name: my_custom_server
+  #   module_path: customized_server/my_server.py
+  #   port: 8006  # Optional: will auto-assign if not specified
+  #   transport: streamable-http  # or stdio
+  #   description: "My custom MCP server"
+  #   env_vars:
+  #     MY_API_KEY: required  # Will prompt user for input
+  #     MY_CONFIG: default_value
+  #   # FRP隧道配置（新增）
+  #   enable_tunnel: true          # 是否启用隧道
+  #   tunnel_subdomain: "custom"   # 隧道子域名
+  #   auto_register: true          # 是否自动注册到客户端
+
+# Official servers are automatically included with tunnel support:
+# - audio_slicer: Audio slicing service (port 8002) [🌐 隧道启用]
+# - filesystem: Sandboxed filesystem operations (port 8003) [🌐 隧道启用]
+
+# FRP隧道功能说明:
+# - enable_tunnel: 是否为此服务器启用FRP隧道
+# - tunnel_subdomain: 指定隧道的子域名（可选）
+# - auto_register: 是否自动将公网地址注册到MCP客户端
+# 
+# 启动命令选项:
+# - --no-tunnel: 禁用所有隧道功能
+# - --registry-url: 指定MCP客户端注册地址（默认: http://localhost:8080）
