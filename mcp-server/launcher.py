@@ -72,12 +72,12 @@ class MCPServerManager:
     def get_official_servers(self) -> List[ServerConfig]:
         """获取官方服务器配置"""
         return [
-            ServerConfig(
-                name="audio_slicer",
-                module_path="official_server/audio_slicer/server.py",
-                port=8002,
-                description="Audio slicing service for beat-based segmentation"
-            ),
+            # ServerConfig(
+            #     name="audio_slicer",
+            #     module_path="official_server/audio_slicer/server.py",
+            #     port=8002,
+            #     description="Audio slicing service for beat-based segmentation"
+            # ),
             ServerConfig(
                 name="filesystem", 
                 module_path="official_server/filesystem/server.py",
