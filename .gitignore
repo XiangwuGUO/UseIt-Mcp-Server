@@ -124,3 +124,4 @@ mcp_server_frp.json
 .mypy_cache/
 .dmypy.json
 dmypy.json
+mcp-server/useit_frp/tunnels.json
