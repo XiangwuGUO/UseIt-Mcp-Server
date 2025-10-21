@@ -149,9 +149,9 @@ function Install-Dependencies {
                 $checkResult = & python -m pip show $package 2>&1
                 if ($LASTEXITCODE -eq 0) {
                     $version = ($checkResult | Select-String "Version:").ToString().Split(":")[1].Trim()
-                    Write-Host "  ✓ $package ($version)" -ForegroundColor Green
+                    Write-Host "  OK $package ($version)" -ForegroundColor Green
                 } else {
-                    Write-Host "  ✗ $package (not found)" -ForegroundColor Red
+                    Write-Host "  !! $package (not found)" -ForegroundColor Red
                 }
             }
             return $true
